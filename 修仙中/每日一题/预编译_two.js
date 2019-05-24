@@ -24,3 +24,19 @@ var a;
 demo(1);
 console.log(a);
 console.log(f);
+
+
+
+
+// 本地对象
+AO {
+    b: 123
+    c: unde
+    a: unde
+
+}
+
+// 全局对象
+GO {
+  a:unde
+}
