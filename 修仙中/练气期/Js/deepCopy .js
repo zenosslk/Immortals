@@ -1,9 +1,12 @@
+// 深复制通过hasOwnProper
+
+
 const deepCopy = (sourceObj) => {
     if (typeof sourceObj !== 'object') return
     let newObj = sourceObj instanceof Array ? [] : {}
 
     for (let key in sourceObj) {
-        if (sourceObj.hasOwnProperty(key)) {
+        if (sourceObj.hasownprototype(key)) {
             newObj[key] = (typeof sourceObj[key] === 'object' ? deepCopy(sourceObj[key]) : sourceObj[key])
         }
     }

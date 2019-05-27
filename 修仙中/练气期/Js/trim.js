@@ -3,4 +3,4 @@ function trim(str) {
     return str.replace(reg, "")
 }
 
-// console.log(trim('             adsdasddsadsad    '))
+console.log(trim('             adsdasddsadsad    '))
