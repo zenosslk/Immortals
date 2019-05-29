@@ -12,10 +12,11 @@
 // let res = Object.assign({}, obj)
 
 const shallowCopy = (Sobj) => {
+    // 判断是否为对象，如果不是直接返回
     if (typeof Sobj !== 'object') return
-
+    // 判断接受的参数是否是Array ，如果是， 则定义的新newObj 则是数组，反之 则为对象
     let newObj = Sobj instanceof Array ? [] : {}
-
+    // 对接收的参数进行遍历，只会遍历可枚举属性， hasOwnProperty 方法判断属性是否存在
     for (let key in Sobj) {
         if (Sobj.hasOwnProperty(key)) {
             newObj[key] = Sobj[key]
