@@ -1,2 +1,4 @@
 Question: 如何判断一个变量是不是数组？
 
+
+Answer： 

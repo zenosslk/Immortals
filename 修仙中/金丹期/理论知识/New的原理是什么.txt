@@ -2,4 +2,4 @@ Question: new的原理是什么？ 通过new 的方式创建对象和通过字�
 
 
 
-Answer：
+Answer： new 创建的会改变this方向

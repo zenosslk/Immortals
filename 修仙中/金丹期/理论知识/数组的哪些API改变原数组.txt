@@ -1,4 +1,4 @@
 Question：数组的哪些API 会改变原数组？
 
 
-Answer：
+Answer： slice() split() 

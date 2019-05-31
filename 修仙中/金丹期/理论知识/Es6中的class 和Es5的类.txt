@@ -1,3 +1,3 @@
-Question: ES6中的class 和Es 5 的类有什么区别？
+Question: ES6中的class 和Es5 的类有什么区别？
 
 Answer：

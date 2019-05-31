@@ -1,4 +1,4 @@
 Question: prototype 和_proto_ 的区别是什么？
 
 
-Answer：
+Answer： something._proto_  =  something.prototype

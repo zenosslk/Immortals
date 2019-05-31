@@ -6,7 +6,7 @@ const deepCopy = (sourceObj) => {
     let newObj = sourceObj instanceof Array ? [] : {}
 
     for (let key in sourceObj) {
-        if (sourceObj.hasownprototype(key)) {
+        if (sourceObj.hasOwnProperty(key)) {
             newObj[key] = (typeof sourceObj[key] === 'object' ? deepCopy(sourceObj[key]) : sourceObj[key])
         }
     }

@@ -1,4 +1,4 @@
 Question: 在JS中什么是变量提升 ， 什么是暂时性死区？
 
 
-Answer：
+Answer：  函数声明或者是变量声明
