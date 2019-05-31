@@ -11,11 +11,11 @@ const deepCopy = (sourceObj) => {
         }
     }
     return newObj
-}
+} 
 let obj = {
     a: 1,
     arr: [2, 3]
-};
+}; 
 let res = deepCopy(obj);
 console.log(res.arr === obj.arr); // false，指向不同的引用
 console.log(res === obj); // false
