@@ -1,0 +1,4 @@
+Question: 词法作用域和this的区别？
+
+
+Answer：

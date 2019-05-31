@@ -1,0 +1,4 @@
+Question： Call 和Apply 有什么区别？ call 。 apply 和bind的内部是如何实现的？
+
+
+Answer：

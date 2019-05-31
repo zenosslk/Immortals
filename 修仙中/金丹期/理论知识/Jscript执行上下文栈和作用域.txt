@@ -1,0 +1,4 @@
+Question: 谈谈你对JS执行上下文和作用域链的理解
+
+
+Answer：

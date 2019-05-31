@@ -1,0 +1,4 @@
+Question： 如何正确的判断this ？ 箭头函数this的指向是什么？
+
+
+Answer：

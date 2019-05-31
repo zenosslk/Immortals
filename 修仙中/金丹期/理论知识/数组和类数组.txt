@@ -1,0 +1,4 @@
+Question： 类数组和数组的区别是什么？
+
+
+Answer：
