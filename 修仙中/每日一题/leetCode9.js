@@ -14,11 +14,14 @@
 
 
 var isPalindrome = function (x) {
-    let num = x.toString().split("")
-    for (var i = 0; i < num.length; i++) {
-        if (num[i] !== num[num.length - 1 - i]) {
+    var num1 = x.toString().split("")
+    var num2 = (x.toString().split("").reverse())
+
+    for (let key in num1) {
+        if (num1[key] !== num2[key]) {
             return false
         }
     }
     return true
 };
+isPalindrome(123)
