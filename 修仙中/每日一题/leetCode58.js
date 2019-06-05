@@ -13,9 +13,7 @@ var lengthOfLastWord = function (s) {
 
 
     var st = s.trim()
-    // console.log(st)
     var str = st.split(" ")
-    console.log(str)
     return (str[str.length - 1]).length
 };
 
