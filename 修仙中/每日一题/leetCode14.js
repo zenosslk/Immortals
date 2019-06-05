@@ -11,7 +11,15 @@
 
 var longestCommonPrefix = function(strs) {
     for(let key in strs){
-        console.log(key)
+        let nstrs = Array.of(strs[key])
+        let oneStrs = nstrs[0].split("")
+        let kArr = []
+        // 循环会得到三个数组
+        console.log(oneStrs)
+        // console.log(oneStrs[0])
+        // console.log('去了下一次循环')
+        
+        // console.log(oneStrs)
     }
 };
 longestCommonPrefix(["flower","flow","flight"])
