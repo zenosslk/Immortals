@@ -29,3 +29,84 @@ Answer:
             app.get('/easy-mock' , function(req,res){
                 res.send(`${encodeURIComponent(req.query.type)}`)
             })
+        
+
+        2.2: DOM 型XSS 
+            DOM 型XSS攻击 ， 实际上就是前端Javascript 代码不够严谨，把不可信的内容插入到页面，再使用.innerHTML
+                .outerHTML 。 .appendChild   document.write() 等Api 时 ， 不要把不可信的数据作为HTML 插到页面上，
+                    尽量使用.innerText  .textContent  .setAttribute() 等Api
+
+            DOM型XSS的攻击步骤：    
+                1：攻击者构造出特殊数据，其中包含恶意代码。
+                2：用户浏览器执行了恶意代码
+                3：恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作
+            
+
+            如何防范DOM型XSS攻击
+                1： 对于URL 链接(图片的SRC属性), 那么直接使用encodeURIComponent来转义
+                2： 对于非URL ， 我们可以进行编码function
+                        encodeHtml(str) {   
+                            return str.replace(/"/g, '&quot;')           
+                                .replace(/'/g, '&apos;')          
+                                .replace(/</g, '&lt;')         
+                                .replace(/>/g, '&gt;');
+                        }
+
+
+        2.3 存储型XSS 
+
+            恶意脚本永久存储再目标服务器上。当浏览器请求数据时，脚本从服务器传回并执行，影响范围比反射型和DOM型XSS更大。
+            存储型XSS攻击的原因仍然是没有做好数据过滤：前端提交数据至服务端时，没有做好过滤；
+            服务端在接受到数据时，在存储之前，没有做过滤；前端从服务端请求到数据，没有过滤输出。
+
+            攻击者将恶意代码提交到目标网站的数据库中。
+            用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。
+            用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。
+            恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。
+            这种攻击常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等。
+
+            如何防范存储型XSS攻击：
+
+                1： 前端数据传递给服务器之前，先转义/过滤(防范不了抓包修改数据的情况)
+
+                2：服务器接收到数据，在存储到数据库之前，进行转义/过滤
+
+                3：前端接收到服务器传递过来的数据，在展示到页面前，先进行转义/过滤
+
+
+    除了谨慎的转义，我们还需要其他一些手段来防范XSS攻击:
+
+    1.Content Security Policy
+
+        在服务端使用 HTTP的 Content-Security-Policy 头部来指定策略，或者在前端设置 meta标签。
+
+        例如下面的配置只允许加载同域下的资源：
+        Content-Security-Policy: default-src 'self'<meta http-equiv="Content-Security-Policy" content="form-action 'self';">
+
+        前端和服务端设置 CSP 的效果相同，但是 meta无法使用 report
+
+        严格的 CSP 在 XSS 的防范中可以起到以下的作用：
+
+        禁止加载外域代码，防止复杂的攻击逻辑。
+
+        禁止外域提交，网站被攻击后，用户的数据不会泄露到外域。
+
+        禁止内联脚本执行（规则较严格，目前发现 GitHub 使用）。
+
+        禁止未授权的脚本执行（新特性，Google Map 移动版在使用）。
+
+        合理使用上报可以及时发现 XSS，利于尽快修复问题。
+
+    2.输入内容长度控制
+
+       对于不受信任的输入，都应该限定一个合理的长度。虽然无法完全防止 XSS 发生，但可以增加 XSS 攻击的难度。    
+
+    3.输入内容限制
+
+        对于部分输入，可以限定不能包含特殊字符或者仅能输入数字等。
+
+    4.其他安全措施
+
+       HTTP-only Cookie: 禁止 JavaScript 读取某些敏感 Cookie，攻击者完成 XSS 注入后也无法窃取此 Cookie。
+
+      验证码：防止脚本冒充用户提交危险操作。
