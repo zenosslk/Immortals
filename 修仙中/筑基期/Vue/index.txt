@@ -1,0 +1,30 @@
+1. Question:   Css如何只在当前组件起作用
+Answer: 在style标签中写入scoped 
+
+2. Question: v-if 和v-show 的区别
+Answer： v-if是判断元素在DOM上的显示和隐藏, V-show:是通过display:none /block 的显示和隐藏
+
+3. Question： route 和 router 的区别
+Answer： route是"路由信息对象" , 包括path ,params ,hash ,query ,fullPath,matched,name等路由信息参数.
+        而router是"路由实例"对象 ，包括了路由的跳转方法,钩子函数
+
+4.  Question:  Vue.js两个核心是什么?
+    Answer:  数据驱动和组件系统
+
+5. Question: Vue中几种常用的指令?
+    Answer: v-for , v-if , v-bind , v-show , v-else
+
+6.  Question: Vue常用的修饰符？
+    Answer: .prevent 提交事件不再重载页面 , .
+            stop阻止单击事件冒泡
+            .self 当事件发生在该元素本身而不是子元素的时候触发
+            .captrue事件侦听,事件发生的时候会调用
+
+7. Question： v-on 可以绑定多个方法？
+    Answer： 可以
+
+8. Question： vue中的key值的作用?
+    Answer: 当Vue用v-for 正在更新已渲染过的元素列表时,它默认用"就地复用"策略，
+            如果数据项的顺序被改变，vue将不会移动DOM元素来匹配数据项的顺序，而是
+            简单的复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。
+            key 的作用主要是为了高效的更新DOM
