@@ -1,0 +1,3 @@
+Web Servers : Web服务器,使用HTTP协议向Web提供内容
+
+Application Servers ：应用程序服务器,托管并公开业务逻辑和进程
