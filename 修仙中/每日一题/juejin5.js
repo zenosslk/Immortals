@@ -7,8 +7,7 @@ const mouse = {
   name: "Mickey",
   small: true
 };
-// 复制代码
-// A: mouse.bird.size
+// A: mouse.bird.size               //yes
 // B: mouse[bird.size]
 // C: mouse[bird["size"]]
 // D: All of them are valid
