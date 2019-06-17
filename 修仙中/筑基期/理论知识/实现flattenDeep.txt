@@ -1,0 +1,3 @@
+Question： 请实现一个flatten Deep 函数，把嵌套的数组扁平化
+
+Answer：
