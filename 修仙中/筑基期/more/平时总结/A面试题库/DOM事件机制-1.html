@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="page">
+      <div class="content">
+        <div class="refer">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <p>题目一：要求点击任何一个元素，返回它在事件冒泡时所经过的元素,有id返回id，有类名返回类名,都无返回标签名</p> -->
+
+    <!-- <script> 
+    document.addEventListener('click', function(e) {
+        return getCssSelecter(e.target)
+     })
+
+
+   function getCssSelecter(dom) {
+     var arr = [];
+  
+     while(dom){
+         var e = dom.id ? '#'+ dom.id: ( dom.className ?  '.' + dom.className.split(' ').join('.'): dom.tagName.toLowerCase() );
+         arr.push( e );
+         dom = dom.parentElement;
+     }
+     console.log(arr.reverse())
+     return arr;
+ }
+</script> -->
+
+  
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div class="BFC相关问题">
+      BFC 直译为 "块级格式化上下文" 
+        它是一个独立的渲染区域。 只有block-level box 参与
+        它规定了内部的Block-level Box 如何布局 并且与这个区域外部毫不相干
+      BFC的渲染特点
+        BFC这个元素的垂直方向的边距会发生重叠， 垂直方向的距离由margin决定，取最大值
+        BFC 的区域不会与浮动元素的box重叠 ，(清除浮动原理)
+        计算BFC 的高度的时候， 浮动元素也会参与计算
+      哪些元素会生成BFC
+        BFC 就是页面上的一个隔离的地理容器， 容器里面的子元素不会影响到外面的元素， 反之也如此
+            根元素
+            overflow不为Visible
+            float不为none
+            position 为absolute或fixed
+            display 为inline-block ，table-cell等
+      BFC的使用场景
+        它的很常用的一个应用场景就是解决边距重叠 ， 清除浮动的问题
+      Vue加载图片问题
+      
+    </div>
+</body>
+</html>

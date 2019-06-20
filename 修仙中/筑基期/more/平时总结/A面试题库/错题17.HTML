@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function A() {
+            this.m = 1;
+        }
+
+        function B() {
+            this.m = 2;
+        }
+
+        A.call(B);  //A执行b的方法  A()：A.m=2
+        B.call(A);  //B执行a的方法  B()：B.m=1
+        var a = new A();   //a =a.m=1 
+        var b = new B();    // b=b.m=2
+        console.log(a.m == B.m);  //true
+        console.log(b.m == A.m);    //true
+    </script>
+</body>
+
+</html>
