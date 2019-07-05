@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="事件冒泡理论">
+      事件冒泡： 结构上嵌套关系， 会存在事件冒泡的功能，
+      即同一事件，自子元素冒泡到父元素 事件捕获： 结构上嵌套关系，
+      会存在事件捕获的功能 ， 即同一事件，自父元素 捕获 自 子元素
+      触发顺序：先捕获后冒泡 on： focus ， blur , change m submit , reset ,
+      select 等事件不冒泡 取消冒泡： event.stopPropagetion();
+      不支持IE9以下的版本 event.concelbubble = true IE独有
+    </div>
+    <div class="冒泡捕获触发顺序">事件捕获 ==> 目标过程 ==>事件冒泡</div>
+    <div class="阻止默认事件">
+      默认行为：点击A标签就跳转 拖拽一个图片到浏览器会自动打开，
+      点击表单提交按钮会提交表单 阻止方法： e.preventDefault()
+    </div>
+    <div class="事件委托">
+      理论：在js中 ， 添加到页面上的事件处理程序数量将关系到页面的整体运行性能，
+      导致这一个问题的原因是多方面的、 首先 ， 每个函数都是对象 ，
+      都会占用内存， 内存中的对象越多， 性能就越差 ， 其次，
+      必须事件指定所有的、 事件处理程序而导致的DOM访问次数。
+      会延迟整个页面的交互就绪时间 对"事件处理程序过多“
+      问题的解决方案就是事件委托。事件委托利用了事件冒泡
+      只指定一个事件处理程序，就可以管理某一类型的所有的事件
+    </div>
+    <p>
+      冒泡排序算法描述： 1: i从 0 开始 ， i 与 i+1 比较， 如果i>i+1 , 那么就互换
+      2：i 不断增加 ， 直到i < n-1 (n是数组元素的个数， n-1 是数组最后一个元素)
+      遍历之后可以让数组元素中最大值排在数组的最后面
+    </p>
+    <script>
+      // var arr = [
+      // 43,
+      // 23,
+      // 234,
+      // 23,
+      // 42,
+      // 423,
+      // 42,
+      // 34,
+      // 2,
+      // 123,
+      // 2,
+      // 4,
+      // 23,
+      // 5,
+      // 34,
+      // 3,
+      // 6,
+      // 45,
+      // 6
+      // ];
+      // var len = arr.length;
+      // for (let i = 0; i < len; i++) { for (let j=i; j < len - 1; j++) { if (arr[i]> arr[j + 1]) {
+      // let temp = arr[i];
+      // arr[i] = arr[j + 1];
+      // arr[j + 1] = temp;
+      // }
+      // }
+      // }
+      // console.log(arr);
+      //
+    </script>
+     
+        <script>
+    //       // 冒泡排序算法：
+       var arr = [111, 2, 3123, 21, 4, 23, 4, 23, 4, 35,  435, 4, 6, 5, 76, 8, 6, 89]
+          var len = arr.length
+        for(var i=0 ; i<len ; i++){
+          for(var j  = i  ; j<len-1 ; j++){
+            if(arr[i] >arr[j+1]){
+              let temp = arr[i];
+              arr[i]=arr[j+1]
+              arr[j+1] = temp
+            }
+          }
+        }
+        console.log(arr)
+        </script> 
+
+    <script>
+      var arr = [111, 2, 3123, 21, 4, 23, 4, 23, 4, 35, 435, 4, 6, 5, 76, 8, 6, 89]
+      var len = arr.length
+      for (var i = 0; i < len; i++) {
+        for (j = i; j < len - 1; j++) {
+
+          if (arr[i] > arr[j+1]){
+            let temp = arr[i] 
+            arr[i] = arr[j+1]
+            arr[j+1] = temp
+          }
+        }
+      }
+          console.log(arr)
+    </script>
+  </body>
+</html>

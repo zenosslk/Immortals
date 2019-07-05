@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+       *{
+           padding: 0;margin: 0;
+       }
+       body{
+           background-color: #000000;
+       }
+       .demo{
+           position: absolute;
+           width: 20px;
+           height: 20px;
+           left: 0;
+           top: 0;
+           background-color: #ffffff;
+       }
+     .demo2{
+        position: absolute;
+           width: 100px;
+           height: 200px; 
+           background-color: red; 
+   }  
+   .demo3{
+        position: absolute;
+           width: 200px;
+           height: 20px; 
+           background-color: aqua; 
+   }  
+    
+   </style>
+</head>
+<body>
+    <div class="demo"></div>
+    <script>
+
+
+       var div=document.getElementsByTagName('div')[0];
+        function getStyle(elem,prop){
+            if(window.getComputedStyle){
+                return window.getComputedStyle(elem,null)[prop];
+            }else{
+                return elem.currentStyle[prop];
+            }
+        }
+  
+        var timer=setInterval(function(){
+                document.onkeydown=function(e){
+                 switch(e.keyCode){
+                     case 83:
+               div.style.top=parseInt(getStyle(div,"top"))+10+"px"; 
+               break;
+                    case 87:
+               div.style.top=parseInt(getStyle(div,"top"))-10+"px"; 
+               break;
+                     case 68:              
+               div.style.left=parseInt(getStyle(div,"left"))+10+"px"; 
+               break;
+
+                    case 65:              
+               div.style.left=parseInt(getStyle(div,"left"))-10+"px"; 
+               break;
+                    case 74:
+                div.setAttribute("class","demo2");
+                break;
+                    case 75:
+                div.setAttribute("class","demo3");
+
+                     } 
+                } 
+          
+         
+             document.onkeyup=function(e){
+                div.setAttribute("class","demo");
+
+             }
+        },600)
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>

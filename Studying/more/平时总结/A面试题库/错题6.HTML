@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var a = 4;
+        function b(x, y, a) {   //x=1 y=2 a=3
+            alert(a);       //第一次执行 a=3---------
+            arguments[2] = 10;      //a=10
+           alert(a);       //  第二次执行 a=10------------
+        }
+        a = b ; //第一次执行
+        alert(a); 
+        console.log(a)  //第三次执行 und	-------
+    </script>
+</body>
+
+</html>

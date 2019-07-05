@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p> 
+    自己封装hasChildren()方法，不可用children属性
+    </p> -->
+   
+    <script>
+        function son(){
+        var child=this.childNodes;
+        var len=child.length;
+        for(var i=0;i<len;i++){
+            if(child[i].nodeType==1){
+                return true;
+            }
+            return false;
+        }
+    } 
+    </script>
+</body>
+</html>

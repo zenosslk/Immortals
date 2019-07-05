@@ -1,0 +1,4 @@
+Question： 如何正确的判断this ？ 箭头函数this的指向是什么？
+
+
+Answer： 箭头函数没有自己的this ， 它的this 继承于上一层代码块的this 

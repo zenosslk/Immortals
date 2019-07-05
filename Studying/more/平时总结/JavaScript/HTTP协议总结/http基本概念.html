@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="端口">
+        一个完整的URL分为：
+            http协议
+            域名
+            端口
+            pathname
+            search(query)
+            hash
+
+
+    </div>
+    <div class="http请求">
+        请求首行    ：URL ， status text status code
+        请求头  一组一组的key :value    
+        请求空行    就是一个空白行 ，用于分割请求头和请求正文
+        请求正文    请求发送的具体内容
+
+    </div>
+    <div class="http请求报文和响应报文包含哪些部分">
+        请求报文：1：请求行：包含请求方法，URL ， http 版本信息
+                    2：请求首部字段
+                        3：请求内容实体
+        响应报文： 1:状态行 ， 包含http版本， 状态码 ， 状态码的原因短语
+                    2：响应首部字段
+                        3：响应内容实体
+
+    </div>
+    <div class="http的首部字段包括哪些类型">
+        1：通用首部字段（请求报文与响应报文都会使用的首部字段）它包括以下几部分
+            Data ：创建报文时间 
+            Connection ：连接的管理方式
+            Cache-Control ： 缓存的控制
+            Transfer-Encoding：报文主体的传输编码方式
+        2：请求首部字段（请求报文会使用的首部字段）
+            Host： 请求资源所在的服务器
+            Accept：可处理的媒体类型
+            Accept-Charset：可接受的字符集
+            Accept-Encoding 可接受的内容编码
+            Accept-Language 可接受的自然语言
+        3：响应首部字段（响应报文会使用的首部字段）
+            Accept-Ranges   可接受的字节范围
+            Location        令客户端重新定向带URL
+            Serve           http服务器的安装信息
+        4：实体首部字段（请求报文与响应报文的实体部分使用的首部字段）
+            Allow           资源可支持的http方法
+            Content-Type    实体主体的类型
+            Content-Encoding实体主体使用的编码方式
+            Content-Language实体主体的自然语言
+            Content-Length  实体主体的字节数
+            Content-Range   实体主体的位子范围，一般用于发出部分请求时使用
+
+    </div>
+
+    <div class="请求方法">
+        http 1.0：
+        1：get 请求获取Request-URL 所标识的资源
+        2：POST 在Request-URL所标识的资源后附加新的数据
+        3：HEAD 请求获取由Request-URL所标识的资源的响应消息报文
+        http1.1：
+        4：PUT  请求服务器存储一个资源 ， 并用Request-URL 作为其标识
+        5：delete 请求服务器删除Request-URL 所标识的资源
+        6：trace 请求服务器回送收到的请求信息 ， 主要用于测试或者诊断
+        7：connect 保留将来使用
+        8：options 请求查询服务器的性能 ，护着 查询与资源相关的选项和需求
+
+    </div>
+</body>
+</html>

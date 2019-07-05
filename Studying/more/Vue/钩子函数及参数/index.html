@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="自定义指令">
+    全局自定义指令： Vue 对象提供了directive 方法 ，可以用来自定义指令
+            directive 方法接受两个参数，一个指令名称， 另一个是函数
+    
+    局部自定义指令： 通过组件的directive 属性定义
+  </div>
+  <div class="钩子函数">
+      1:bind 在指令第一次绑定到元素时调用
+      2：inserted 在被绑定元素插入父节点时调用
+      3：update 在所在组件的Vnode 更新时调用
+      4：componentUpdated : 在指令所在的组件的Vnode及其Vnode 全部更新后调用（VUE2.0新增）
+      5：UNbind ：只调用一次，在指令与元素解除绑定时调用
+  </div>
+  <div class="钩子函数参数">
+    1： el  指令所绑定的元素
+    2： binding  指令对象
+    3： Vnode 虚拟节点
+    4： oldvnode 上一个虚拟节点
+  </div>
+  
+</body>
+</html>

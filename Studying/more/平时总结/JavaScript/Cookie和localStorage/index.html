@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+      <div class="cookie的优点">
+        1:通过良好的编程，控制保存在cookie 中的session对象的大小
+        2：通过加密和安全传输技术 ， 减少cookie被破解的可能性
+        3：只有在cookie中存放不敏感的数据 ， 即使被盗也不会有很大的损失
+        4：控制cookie的生命期， 使之不会永远有效， 这样的话偷盗者很可能拿到的就是一个过期的cookie
+
+      </div>
+      <div class="cookie的缺点">
+        1：cookie的长度和数量的限制。每个domain最多只能有20条cookie， 每个cookie长度不能超过4KB ,否则会被截掉
+        2： 安全性问题， 如果cookie被人拦掉了， 那个人就可以获取所有的session信息， 加密的话也不起什么作用
+        3： 有些状态不能保存在客户端 ， 例如， 为了防止重复提交表单， 我们需要在服务器保存一个计数器，
+            若把计数器保存在客户端，则起不到什么作用
+      </div>
+      <div class="sessionStorage">
+        sessionStorage 用于本地存储一个会话session中的数据 ， 这个数据只有在同一个会话中的页面才能访问并且当会话结束后数据
+          也随之销毁， 因此sessionStorage 不是一种持久化的本地存储， 仅仅是会话级别的存储
+        而localStorage 用于持久化的本地存储 ， 除非主动删除数据，否则数据是永远不过期的
+      </div>
+</body>
+</html>

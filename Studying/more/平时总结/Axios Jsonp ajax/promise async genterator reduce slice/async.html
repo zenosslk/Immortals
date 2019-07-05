@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  语法：
+  async function asyncFuncName(param1  , param2 , ... ){ statements }
+
+  async 函数的返回值是一个Promise对象 ， 当这个async 函数返回一个值时 ， Promise 的resolve
+      方法会传递这个值 ， (相当于Promise.resolve(value)) ; 当async 函数抛出异常时 ， Promise
+      的reject 方法也会传递这个异常值， (相当于Promise.reject(value))
+  async 函数中可能会有await 表达式 ， await 表达式会暂停 当前async function 的执行 ， 等待Promise
+      处理完成 。 若Promise 正常处理(fulfilled ) 其处理结果作为await表达式的值，  继续执行async function
+  若Promise 处理异常(rejected)  ， await 表达式会把promise 的异常抛出
+
+  另外： 如果await 操作符后的表达式的值不是一个Promise ，那么该值将被转换为一个已正常处理的Promise
+  
+</body>
+</html>
