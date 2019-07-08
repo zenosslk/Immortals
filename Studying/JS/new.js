@@ -10,11 +10,11 @@
 // Con ：function
 // ...args : 参数
 
-function New(Con, ...args) {
+function New(fn, ...args) {
     // 新创建的对象
     let res = {}
     //设置一个指定的对象的原型 ( 即, 内部[[Prototype]]属性）到另一个对象或  null
-    Object.setPrototypeOf(res, Con.prototype)
+    Object.setPrototypeOf(res, fn.prototype)
     // 改变this 指向
     let result = Con.apply(res, args)
 
