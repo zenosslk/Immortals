@@ -77,13 +77,31 @@
 //     js 的原型链，继承
 
 //     js 的 bind、apply、call 有什么区别
-
+            apply 改变this指向，接收的是数组 
+            call 改变this指向，接收的是单独的值
+            bind 返回的是函数
 //     var、let、const的区别
+            let const 不可重复声明
+            let const 是JS中的块级作用域
+            let const 声明变量不可提升
+            let const 定义变量，定义之前如果抛出错误会形成暂时性死区
 
 //     new 操作符原理（手动实现 new 给出思路）
+            function New(fn , ...arg){
+                需要定义一个对象
+                let result = {}
+                改变对象的Prototype
+                Object.setPrototypeOf(result , fn.prototype)
+                改变this指向
+                let res = fn.call(result , arg)
+                判断复杂数据类型
+             return res instanceof Object ? res : result
+            }
 
 //     箭头函数，箭头函数 this 问题，箭头函数是否可以被 new
-
+            箭头函数可以省略大括号 和 return
+            箭头函数this 指向函数外部this 
+            箭头函数 不可以被new , 不可以作为构造函数
 //     promise 知道吗，手写一个 promise 怎么写（说思路）
 
 //     promise.all 应用场景
@@ -108,13 +126,51 @@
 //     看你项目 ES6 用的比较多，说说 ES6 的一些新特性
 
 //     有没有考虑对图片处理的优化手段，说说常用的
-
+            对图片进行懒加载， 预加载
+            对于图片进行压缩， tinypng.com 
+            对于小图片使用精灵图 
 //     图片懒加载怎么做
 
 //     考虑过缓存方面的优化吗，强缓存和协商缓存区别
 
 //     防抖和节流
-
+            防抖: debouce
+        function debouce(fn , delay){
+            let timer 
+            return function (arg){
+                let that = this 
+                cleanTimerout(timer)
+                let timer = settimeout(()=>{
+                    fn.call(that , arg)
+                },delay)
+            }
+        }
+            节流: throttle
+        function throttle (fn ,delay){
+            定时器模式
+            let timer 
+            return function(arg){
+                let that= this 
+                if(!timer){
+                    settimeout(()=>{
+                        timer(null)
+                        fn.call(that , arg)
+                    },delay)
+                }
+            }
+        }
+        function throttle(fn, delay){
+            时间戳模式
+            let previous = 0
+            return function(arg){
+                let that = this 
+                let nowData = +new Date()
+                if(nowData - previous > delay){
+                    fn.call(that, arg)
+                    previous = nowData
+                }
+            } 
+        }
 //     实现无缝滑屏，你觉得怎么实现
 
 //     dns 查询原理
@@ -130,6 +186,14 @@
 //     抓包会吗，抓包原理，fiddler 用过吗
 
 //     跨域
+        axios  
+        jsonp  
+            动态的创建script标签，通过Src属性进行跨域，只支持Get请求，不支持Post请求
+            JSONP是一种跨域的数据交互协议
+            JSON 是一种数据格式
+
+        ajax 
+        CROS
 
 //     csrf、xss，如何预防
 
@@ -148,7 +212,7 @@
 
 //     MVC MVP MVVM 架构了解吗，他们的使用场景
 
-//     怎么理解前后端分离思想
+//     怎么理解前后端分离思想   
 
 //     和后端一般是怎么沟通和联调的
 
@@ -168,6 +232,8 @@
 //     圣杯布局、双飞翼布局
 
 //     CSS 媒体查询
+        media属性用于为不同的媒介类型规定不同的样式
+        可以获取到窗口高度，窗口宽度
 
 //     CSS 动画、CSS 对网页性能优化
 
@@ -178,7 +244,20 @@
 //     Go 语言知道吗？ 为什么 Go 效率比较高？ （只是了解，效率高大概是因为多线程？）
 
 //     Ajax 和 Fetch
+            var xhr = new XMLHttpRequest
+            xhr.open("get" , url)
+            xhr.responseType="json"
+            xhr.onload = function(){
+                
+            } 
+            xhr.onerror= function(){
 
+            }
+            xhr.send()
+
+            fetch(url).then(response => response.json())
+                        .then(data=> console.log(data))
+                        .catch(e => console.log("Oops , error" , e))
 //     怎么同时让多个异步请求并行？
 
 //     跨域问题
@@ -186,11 +265,23 @@
 //     xss 和 csrf （聊到跨域基本都会聊跨域安全问题，所以这两个知识点可以一起准备）
 
 //     session 和 cookie
-
+        
 //     服务器怎么知道 session 过期？
-
+        不用判断Session是否过期,系统会自动判断,一般默认20分钟。
+        过期时间可以自己设置，如Session.Timeout=1 //设session有效为一分钟
 //     怎么设置 cookie 过期时间
-
+            通过Max-Age属性设置过期时间：
+            通过Max-Age同样可以设置cookie的过期时间。
+            Max-Age属性值是一个数字，单位是秒，用来指定cookie从现在开始存在的秒数。
+            超过这个这个秒数，那么cookie立马过期；如果同时设置Max-Age与Expires，那么Max-Age优先级更高。
+            代码封装；
+                function setcookie(name, value, daysTolive) {
+                    let cookie = name + "=" + encodeURIComponent(value);
+                    if (typeof daysTolive === "number")
+                        cookie += "; max-age =" + (daysTolive * 60 * 60 * 24);
+                    document.cookie = cookie;
+                    }
+                setcookie("ant","蚂蚁部落",0);
 //     sessionStorage 和 localStorage
 
 //     强缓存和协商缓存
@@ -221,6 +312,9 @@
 //     知道装饰器吗
 
 //     数组方法 map、filter、reduce
+            都是过滤数组的方法，
+            map 返回的是修改后的数组
+            filter 返回的原数组
 
 //     新数据结构 Set、Map
 
@@ -231,7 +325,12 @@
 //     JS 基础还行，问问网络相关知识？（好..）
 
 //     从 url 到页面渲染过程
-
+            1. 浏览器首先搜索自身的DNS缓存，在自身的DNS缓存中寻找该ip 地址，如果没有查询到
+                就会向服务器发起DNS解析请求(DNS解析请求分为：递归名称解析 ， 迭代名称解析)
+            2. 解析成功之后会得到ip地址，浏览器就可以向该ip地址所在的服务器建立TCP连接(三次握手)
+            3. 连接成功之后浏览器就可以向服务器发起HTTP请求
+            4. 服务器通过HTTP请求的路径参数将所需的结果返回给浏览器
+            5. 浏览器得到res之后，内核和js 引擎进行渲染
 //     你刚说到 DNS 解析 能详细说说嘛？ DNS 递归和迭代的区别呢？
 
 //     TCP ？ UDP ？ 区别是什么，你说 TCP 头部很大，具体有哪些报文信息呢？
@@ -267,7 +366,7 @@
 //     图片有哪些格式，知道 WebP 格式的图片吗，图片的一些优化手段
 
 //     图片懒加载原理
-
+            
 //     跨域
 
 //     前端常见攻击方式

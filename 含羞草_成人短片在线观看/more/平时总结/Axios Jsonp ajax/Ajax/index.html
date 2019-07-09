@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="XMLHttpRequest对象简要">
+    属性：xhr.responseText 收到的响应字符串 xhr.status 响应的状态码
+    xhr.readystate 响应下载状态 方法： xhr.open('get' , '/xxx')
+    配置请求动作与路径 xhr.setHeader('content-type' , 'yyy') 配置请求头
+    xhr.send() 发送请求 xhr.onreadystatechange() = function(){}
+    监听响应下载状态
+  </div>
+  <div class="readyState的五种状态">
+    0：未打开->open()还没调用 1：未发送->send()还没调用
+    2：已获取响应头和响应状态 3：正在下载响应体 4：请求完成
+  </div>
+  <div class="什么是ajax">
+    就是用源生的XMLHttpRequest 对象发送请求， 得到服务器返回的数据后再作处理
+  </div>
+
+  <script>
+    // 有四个步骤：
+    // 1： 创建ajax对象XMLHTTPRequest
+    // 2： 设置open(type , url ,boolean)
+    // 3: 设置回调函数 onreadystatechange() 用于处理返回的数据
+    // 4： 发送send()
+    // 源生JS实现Ajax
+    var Ajax = {
+      // get请求有二个参数
+      get: function (url, fn) {
+        var xhr = null
+        if (window.XMLHttpRequest) {
+          xhr = new XMLHttpRequest()
+        } else if (window.ActiveXObject) {
+          xhr = new ActiveXObject()
+        }
+        xhr.open('get', url, true)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status === 200) {
+            fn.call(this, xhr.responseText)
+          }
+        }
+        xhr.send()
+      },
+
+      post: function (url, data, fn) {
+        var xhr = null
+        if (window.XMLHttpRequest) {
+          xhr = new XMLHttpRequest()
+        } else if (window.ActiveXObject) {
+          xhr = new ActiveXObject()
+        }
+        xhr.open('post', url, true)
+        xhr.setRequestHeader(
+          'content-type',
+          'application/x-www-form-urlencoded'
+        )
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status === 200) {
+            fn.call(this, xhr.responseText)
+          }
+        }
+        xhr.send(data)
+      }
+    }
+  </script>
+
+
+
+  <script>
+    var xhr = new XMLHttpRequest()
+    xhr.open('get', url, true)
+    xhr.onreadystatechange = function () {
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        console.log(ajax.responeText)
+      }
+    }
+    xhr.send()
+  </script>
+</body>
+
+</html>

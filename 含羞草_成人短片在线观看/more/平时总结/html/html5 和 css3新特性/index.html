@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>html5有哪些新特性 ，移除了哪些元素？ 如何处理HTML5新标签的浏览器兼容问题 ， 如何区分HTML和HTML5</p>
+
+
+    HTML5现在已经不是SGML的子集， 主要是关于图像，位置，存储，多任务等功能的增加
+    <div class="html5">
+        1： 用于绘画的：canvas
+        2：用于媒介回放的Video 和 audio 元素
+        3：本地离线存储 LocalStorage长期存储数据， 浏览器关闭后数据不丢失
+        4：新的语义化内容元素 ：article footer header nav session
+        5: 新的表单控件： calendar  date email url search 
+        6：新的技术 ： webworker  websocket Geolocation
+    </div>
+
+    <div class="移除的元素">
+        1:纯表现的元素： basefont big center font s strike tt u
+        2: 对可用产生负面影响的元素： frame frameset noframs
+
+    </div>
+    <div class="支持HTML5新标签">
+
+        IE8IE7IE6 支持通过document.createELement方法产生标签
+        可以利用这一特性让这些浏览器支持HTML5新标签
+        浏览器支持新标签后 ， 还需要添加标签的默认样式
+        当然也可以使用成熟的框架 
+
+
+    </div>
+
+    <div class="css3">
+        1:css3实现圆角（border-radius） ， 阴影（box-shadow）
+        2：对文字加特效 (text-shadow) , 线性渐变(gradient) , 旋转（transform）
+                        旋转           放缩             定位                    斜切
+        3: transform : rotate(90 deg) scale(0.8 , 0.9) translate(0px , -30px) skew(-9deg , 0deg)
+    
+        4： css选择器： last-child()  nth-child()  first-child
+        5: Font-face 可以用来加载字体样式，而且还能加载服务器端的字体文件 ， 让客户端显示客户端所没有安装的字体
+        6：多列布局 ：multi-column layout
+        7：线性渐变 ： background-image : -webkit-gradient (linear ,color 坐标0%  ， color 坐标100% );
+    </div>
+</body>
+</html>

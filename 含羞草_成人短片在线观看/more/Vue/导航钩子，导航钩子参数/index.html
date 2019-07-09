@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="导航钩子">
+    导航钩子又称为导航守卫， 又分为全局钩子 ， 单个路由独享钩子 ， 和组件级钩子
+    1：全局钩子有beforeEach , beforeResolve (2.5新增) ， afterEach
+    2：单个路由独享钩子 ： beforeEnter
+    3：组件级钩子 ： beforeRouterEnter , beforeRouteUpdate , beforeRouteLeave
+
+  </div>
+  <div class="导航钩子参数">
+    beforeEach((to , from ,next)=>{
+    if(to.path == '/login' || to.path == '/register'){
+    next();
+    }else{
+    alert("请先登录");
+    next('/login');
+    }
+    })
+    1: to 即将要进入的目标路由
+    2：from 当前导航正要离开路由
+    3：next 一定要用这个函数才能到达下一个路由 ，如果不用就会遭到拦截
+  </div>
+</body>
+
+</html>
