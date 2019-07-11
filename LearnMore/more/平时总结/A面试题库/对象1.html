@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>写一个方法，求字符串长度（提示：字符串有一个方法
+        charCodeAt(); 一个中文占二个字节，一个英文占一个字节）</p>
+
+    <p>
+        定义和用法：
+            charCodeAt（）；方法可返回指定位子的字符串的Unicode编码
+            这个返回值是0-63333之间的整数，（当返回值是<=255时，为英文，当返回值>255时，为中文）
+    </p> -->
+    <script>
+            function idea(str){
+                var sum=str.length;          
+                for(var i=0;i<str.length;i++){
+                   if(str.charCodeAt(i)>255){
+                        sum++;
+                   } 
+                }
+              return sum;
+            }
+        console.log(idea("s sssdd    s s"));
+        </script>
+
+    <!-- <script>
+        
+        function idea(str){
+            var sum=0;          
+            for(var i=0;i<str.length;i++){
+               if(str.charCodeAt(i)>255){
+                 sum+=2;                
+               }else{
+                   sum++;
+               }
+            }
+          return sum;
+
+        }
+    console.log(idea("s s s s"));
+    </script> -->
+</body>
+</html>

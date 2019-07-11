@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Array.prototype.includes()">
+        Array.prototype.includes()
+        查找一个值在不在数组里，若在返回true, 不存在返回false
+
+        接收一个参数时：
+        ['a', 'b', 'c'].includes('a')     // true
+        ['a', 'b', 'c'].includes('d')     // false
+        接收二个参数时：
+        ['a', 'b', 'c', 'd'].includes('b')         // true
+        ['a', 'b', 'c', 'd'].includes('b', 1)      // true
+        ['a', 'b', 'c', 'd'].includes('b', 2)      // false
+
+        和ES6的indexOf()比较
+        ['a', 'b', 'c'].includes('a')          //true
+        ['a', 'b', 'c'].indexOf('a') > -1      //true
+       
+        var arr = [1, 2, 3]
+        var a = 1;
+        arr.includes(a)   //true
+        arr.indexOf(a)    //0 
+       
+       
+        在判断 +0 与 -0 时，被认为是相同的。
+        [1, +0, 3, 4].includes(-0)    //true
+        [1, +0, 3, 4].indexOf(-0)     //1
+  
+        只能判断简单类型的数据，对于复杂类型的数据，比如对象类型的数组，二维数组，这些，是无法判断的.
+        var arr = [1, [2, 3], 4]
+        arr.includes([2, 3])   //false
+        arr.indexOf([2, 3])    //-1
+
+    </div>
+</body>
+</html>

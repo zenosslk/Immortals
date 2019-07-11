@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 封装的axios
+      export default class Axios {
+        // 定义一个静态的获取数据方法
+        static getData(options) {
+          return new Promise((resolve, reject) => {
+            axios({
+              method: 'get',
+              url: 'www.baidu.com',
+              // baseURL是URL后面的参数 ， 也是我们要传入的路径                                                                                                                           
+              baseURL: options.url,
+              // 时间参数
+              timeout: '5000',
+              params: (options.data && options.data.params) || ''
+            }).then(Response => {
+              if (Response.status === 200) {
+                // 还有数据自带的code为0的判断
+                // if(Response.data.code === 0 ){
+                resolve(res)
+                // }
+              } else {
+                reject(Response.data)
+              }
+            })
+          })
+        }
+      }
+    </script>
+ 
+
+
+
+  <script>
+    // 暴露axios
+    export default class Axios {
+      // 定义一个静态方法
+      static getData(options){
+          return new Promise((resolve , reject)=>{
+            axios({
+              url:'www.ik123.com',
+              baseURL:options.url,
+              method:'get',
+              timeout:2000
+            }).then((respone)=>{
+              if(respone.status === 200){
+                resolve(respone)
+              }else{
+                reject(respone)
+              }
+            })
+          })
+      }
+    }
+  
+  
+  
+  
+  </script>
+
+
+
+
+
+  </body>
+</html>

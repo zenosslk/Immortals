@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var num = 10;
+        var obj = {
+            num: 8,
+            inner: {
+                num: 6,
+                print: function () {
+                    console.log("num: " + num + " , this.num: " + this.num);
+                }
+            }
+        }
+        num = 888;
+        // 第一次执行
+        obj.inner.print();
+        // 第二次执行
+        var fn = obj.inner.print; 
+        fn();
+        // 第三次执行
+        (obj.inner.print)(); 
+        // 第四次执行
+        (obj.inner.print = obj.inner.print)(); 
+
+            // num: 888 , this.num: 6    
+            //  num: 888 , this.num: 888, this: Window   
+            //  num: 888 , this.num: 6   
+            //  num: 888 , this.num: 888 , this: Window
+    </script>
+
+
+</body>
+
+</html>

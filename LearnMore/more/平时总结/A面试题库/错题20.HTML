@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function Fun(para1, para2, para3) {
+            var obj = {};
+            obj.para1 = para1;
+            obj.para2 = para2;
+            obj.para3 = para3;
+            return obj;
+        }
+        Fun.prototype.para4 = 4;
+        var o = new Fun(1, 2, 3);
+        console.log(o.para1);   //  1
+        console.log(o.para4);   // und
+        console.log(o instanceof Fun);  // false
+        console.log(o.__proto__ == Fun.prototype);  //fasle
+    </script>
+</body>
+
+</html>

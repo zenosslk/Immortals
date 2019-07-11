@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <input type="text" id="inppp" />没有节流防抖的input
+        <input type="text" id="debounceid" /> 防抖的input
+        <input type="text" id="throttleid" /> 节流的input
+    </div>
+    <script>
+        var inppp = document.getElementById("inppp")
+        var debounceid = document.getElementById("debounceid")
+        var throttleid = document.getElementById("throttleid")
+
+        // 监听原始事件, 无防抖，节流
+        inppp.addEventListener('keyup', function (e) {
+            ajax(e.target.value)
+        })
+
+        debounceid.addEventListener('keyup', function (e) {
+            bebounded(e.target.value)
+        })
+        throttleid.addEventListener('keyup', function (e) {
+            throttled(e.target.value)
+        })
+
+
+        let bebounded = debounce(ajax, 500)
+        let throttled = throttle(ajax, 1000)
+
+
+        // 定义回调函数
+        function ajax(content) {
+            console.log('ajax request' + content)
+        }
+    </script>
+</body>
+
+</html>

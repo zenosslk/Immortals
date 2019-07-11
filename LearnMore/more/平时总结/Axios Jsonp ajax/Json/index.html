@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div class="JSON细节">
+      1:基本类型： string number null Boolean object array
+      JSON的字符串类型必须要加双引号
+    </div>
+    <div class="服务器怎么返回给前端">
+      a: 服务器其实不能返回对象给前端 ， 只能返回字符串给前端（因为http响应的第四部分永远是字符串），
+          只不过当这个字符串符合JSON对象语法时，  我们可以解析出对象
+      
+      字符串解析为JSON对象：
+        let object = window.JSON.parse(string)
+
+    </div>
+</body>
+</html>
