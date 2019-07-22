@@ -14,14 +14,17 @@ function throttle(fn, delay) {
     }
 }
 
-
+ 
 function throttle(fn, delay) {
-    let timer
+    // 定时器模式
+    let timer;
     return function (arg) {
         var that = this
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.call(that, arg)
-        }, delay)
+        if (!timer) {
+            timer = setTimeout(() => {
+                timer = null
+                fn.call(that, arg)
+            }, delay)
+        }
     }
 }

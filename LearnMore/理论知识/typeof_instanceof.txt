@@ -8,4 +8,4 @@ Answer： typeof 能够正确的判断基本数据类型， 但是除了null ,  
 
     instanceof 可以准确的判断复杂数据类型。 但是不能正确的判断基本数据类型
 
-    instance of 是通过原型链判断的， A instanceof B 在A的原型链中层层查找，是否有原型等于B.prototype
+    instanceof 是通过原型链判断的， A instanceof B 在A的原型链中层层查找，是否有原型等于B.prototype

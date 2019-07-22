@@ -366,7 +366,8 @@
 //     图片有哪些格式，知道 WebP 格式的图片吗，图片的一些优化手段
 
 //     图片懒加载原理
-            
+            getboundingclientRect
+            IntersectionObserver
 //     跨域
 
 //     前端常见攻击方式

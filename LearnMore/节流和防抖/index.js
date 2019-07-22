@@ -11,6 +11,9 @@ function debounce(fn, delay) {
     }
 }
 
+
+
+// 节流是一段时间只执行一次
 // 时间戳模式
 // function throttle(fn, delay) {
 

@@ -29,7 +29,6 @@ function unique(arr) {
     let arr1 = []
     let obj1 = {}
     for (var i = 0; i < arr.length; i++) {
-
         if (!obj1[arr[i]]) {
             arr1.push(arr[i])
             obj1[arr[i]] = 1

@@ -1,3 +1,4 @@
+
 Function.prototype.apply = function (context, rest) {
     if (!context) {
         context = typeof window === 'undefined' ? global : window
@@ -20,7 +21,7 @@ Function.prototype.apply = function (context, rest) {
 
 // 测试代码
 // var foo = {
-//     name: 'Selina'
+//     name: 'Selina'   
 // }
 // var name = 'Chirs';
 // function bar(job, age) {
