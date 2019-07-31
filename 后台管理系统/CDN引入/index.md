@@ -1,9 +1,7 @@
 ## 无插件引入 cdn
 
 首先我们不让 webpack 打包用 cdn 引入的文件
-
 对一些不经常改动的库，可以通过 cdn 引入，webpack 不对他们打包
-
 let externals ={
 'vue':'vue',
 'axios':'axios',
@@ -13,11 +11,8 @@ let externals ={
 'echarts':'echarts',
 'vue2-editor':'VueEditor'
 }
-
 然后配置 cdn
-
 ## vue.config.js
-
 const cdn = {
   css:[
   <!-- //element-ui css -->
@@ -38,9 +33,6 @@ const cdn = {
 'https://cdn.jsdelivr.net/npm/echarts@4.2.1/dist/echarts.min.js',
   ]
 }
-
-
-
 
 chainWebpack: config=>{
   (process.env.VUE_APP_CURRENTMODE === 'product'){
