@@ -1,6 +1,0 @@
-##如何确定服务端开启了gzip
-
-1.客户端请求中增加Accept-Enconding:gzip 表示客户端支持gzip 
-2.服务器接收到请求后，将结果通过gzip 压缩返回给客户端，并再响应头中增加Content-Eccoding：gzip,表示响应数据已被压缩
-3.客户端接收请求，响应头有Content-Encoding：gzip 表示数据需解压处理
-
