@@ -16,7 +16,7 @@ function New(fn, ...args) {
     //设置一个指定的对象的原型 ( 即, 内部[[Prototype]]属性）到另一个对象或  null
     Object.setPrototypeOf(res, fn.prototype)
     // 改变this 指向
-    let result = Con.apply(res, args)
+    let result = fn.apply(res, args)
 
     return result instanceof Object ? result : res
 
