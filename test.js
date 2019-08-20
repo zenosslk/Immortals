@@ -33,7 +33,7 @@ function pao(arr) {
   for (var i = 0; i < arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
       if (arr[i] > arr[j]) {
-        arr[j] = copy
+        let copy = arr[i]
         arr[i] = arr[j]
         arr[j] = copy
       }
@@ -42,10 +42,17 @@ function pao(arr) {
   return arr
 }
 
-console.log(pao(arr))
+// console.log(pao(arr)) 
 // 实现new 操作符
+function New(fn, ...args) {
+  let rest = {}
+  //  设置原型对象
+  Object.setPrototypeOf(rest, fn.prototype)
+  // 改变this指向
+  let result = fn.apply(rest , args)
+  return result instanceof Object ? result : rest
+}
 
-//  设置原型对象
 
 // 实现数组去重
 

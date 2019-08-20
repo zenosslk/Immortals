@@ -1,5 +1,4 @@
 define(function (require, exports, module) {
-
     // 定义一个观察者
     var Observe = function () {
         var ob = {}
