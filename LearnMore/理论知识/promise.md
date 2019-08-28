@@ -1,4 +1,30 @@
-Question: 实现Promise.all 方法
+## Promise
+1、了解 Promise 吗？
+2、Promise 解决的痛点是什么？
+3、Promise 解决的痛点还有其他方法可以解决吗？如果有，请列举。
+4、Promise 如何使用？
+5、Promise 常用的方法有哪些？它们的作用是什么？
+6、Promise 在事件循环中的执行过程是怎样的？
+7、Promise 的业界实现都有哪些？
+8、能不能手写一个 Promise 的 polyfill。
+
+ 
+
+ 1: 根据第一次的请求结果去执行第二次请求
+ 2: 解决回调地狱的问题， 回调地狱问题 : 代码臃肿 ， 可读性差 ， 耦合度高， 可维护性差， 只能在回调里处理异常
+
+ 3: 业界著名的Q  和 bluebird
+
+ 4:new Promise(请求1)   
+        .then(请求2(请求结果1))
+        .then(请求3(请求结果2))
+
+ 5: Promise.reject  
+    Promise.prototype.then
+    Promise.prototype.catch
+
+ 6:
+## Question: 实现Promise.all 方法
 
 Answer：
     Promise.all 功能
